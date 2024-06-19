@@ -1,10 +1,16 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const methodOverride = require("method-override");
 const app = express()
-const port = 3000
+const mongoose = require("mongoose");
+const port = process.env.PORT || 3000
+const methodOverride = require("method-override");
 
-//Database
+
+const Player = require("./models/players.js");
+
+
+
+
+
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
