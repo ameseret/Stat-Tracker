@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require("mongoose");
 const port = process.env.PORT || 3000
 const methodOverride = require("method-override");
-
+const playersController = require("./controllers/players.js");
 
 const Player = require("./models/players.js");
 
@@ -15,6 +15,7 @@ const mongoURI = 'mongodb://127.0.0.1:27017/players';
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use('/players', playersController)
 
 async function connectToMongo() {
     try {
