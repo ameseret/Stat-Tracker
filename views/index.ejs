@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players</title>
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+    <h1>All Players</h1>
+    <ul>
+        <% for (let i = 0; i < players.length; i++) { %>
+            <li>
+                The <a href="/players/<%= players[i].id %>"><%= players[i].name %></a> plays for <%= players[i].team %>.
+                <% if (players[i].age >= 35) { %>
+                    They are a veteran player.
+                <% } else { %>
+                    They are in their prime.
+                <% } %>
+                <form action="/players/<%= players[i].id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE"/>
+                </form>
+                <a href="/players/<%= players[i].id %>/edit">Edit</a>
+            </li>
+        <% } %>
+    </ul>
+    <nav>
+        <a href="/players/new">Add New Player</a>
+    </nav>
+
+</body>
+</html>

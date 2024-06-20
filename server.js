@@ -18,9 +18,15 @@ app.use(methodOverride('_method'));
 
 
 //Index
-app.get('/players/', (req, res) => {
-    res.send("hello world")
-})
+app.get('/players', async (req, res) => {
+    try {
+        const players = await Player.find({}); 
+        res.render('index.ejs', { players: players }); 
+    } catch (err) {
+        console.error(err);
+        res.send('Error retrieving players');
+    }
+});
 
 // New
 
