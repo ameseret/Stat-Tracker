@@ -38,23 +38,6 @@ app.get(`/players`, async (req,res) => {
     })
 
 
-// New
-
-
-// Create
-
-
-// Show
-
-
-// Edit
-
-
-// Update
-
-
-// Delete
-
 app.listen(port, () => {
     console.log('listenening on port', port)
 })

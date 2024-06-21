@@ -29,4 +29,50 @@ router.get('/new', (req, res) => {
     }
   });
 
+// Show
+router.get('/:id', async (req, res) => {
+    try {
+        const player = await Player.findById(req.params.id);
+        res.render('show.ejs', { 
+            player: player 
+        });
+    } catch (err) {
+        console.error(err);
+        res.send('Error retrieving player');
+    }
+});
+
+// Edit
+router.get('/:id/edit', async (req, res) => {
+    try {
+        const player = await Player.findById(req.params.id);
+        res.render('edit.ejs', { player: player });
+    } catch (err) {
+        console.error(err);
+        res.send('Error retrieving player for editing');
+    }
+});
+
+// Update
+router.put('/:id', async (req, res) => {
+    try {
+        await Player.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect(`/players/${req.params.id}`);
+    } catch (err) {
+        console.error(err);
+        res.send('Error updating player');
+    }
+});
+
+// Delete
+router.delete('/:id', async (req, res) => {
+    try {
+        await Player.findByIdAndDelete(req.params.id);
+        res.redirect('/players');
+    } catch (err) {
+        console.error(err);
+        res.send('Error deleting player');
+    }
+});
+
 module.exports = router;
