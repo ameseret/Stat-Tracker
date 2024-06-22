@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Player = require('../models/players');
-const mockPlayerStats = require('../mockData/mockStats');
 
-// Index 
+
+//Index 
 router.get('/', async (req, res) => {
     try {
         const players = await Player.find({});
@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         res.send('Error retrieving players');
     }
 });
+
 
 // New 
 router.get('/new', (req, res) => {

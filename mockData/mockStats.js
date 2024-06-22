@@ -6,6 +6,7 @@ const mockPlayerStats = [
         name: 'Luka Doncic',
         team: 'Dallas Mavericks',
         position: 'Guard',
+        age:  25,
         stats: {
             points: 33,
             rebounds: 11,
@@ -24,6 +25,7 @@ const mockPlayerStats = [
         name: 'Kyrie Irving',
         team: 'Dallas Mavericks',
         position: 'Guard',
+        age: 32,
         stats: {
             points: 22,
             rebounds: 3,
