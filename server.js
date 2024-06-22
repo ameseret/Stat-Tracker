@@ -29,14 +29,6 @@ async function connectToMongo() {
   connectToMongo();
 
 
-//Index
-app.get(`/players`, async (req,res) => {
-    const allPlayers = await Player.find({})
-        res.render(`index.ejs`, {
-            players: allPlayers
-        })
-    })
-
 
 app.listen(port, () => {
     console.log('listenening on port', port)

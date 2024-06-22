@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Player = require('../models/players');
+const mockPlayerStats = require('../mockData/mockStats');
 
 // Index 
 router.get('/', async (req, res) => {
@@ -25,7 +26,7 @@ router.get('/new', (req, res) => {
       res.redirect('/players'); 
     } catch (err) {
       console.error(err);
-      res.send('Error creating player');
+      res.status(500).send(err);
     }
   });
 
