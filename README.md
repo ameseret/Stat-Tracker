@@ -1,6 +1,6 @@
-# Smart-Betting
+# Stat Tracker
 
-# General App Idea/Purpose: This app allows sports bettors to keep track of star NBA players stats in the playoffs so that they can make smart bets.
+# General App Idea/Purpose: This app allows a sports statistician to keep track of a players stats.
 
 # Technologies Used: JavaScript, HTML, CSS, Node.js, Mongoose, Express and EJS.
 
