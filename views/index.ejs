@@ -4,40 +4,45 @@
     <%- include ('./partials/header.ejs') %>
 </head>
 <body>
-    <h1>All Players</h1>
-    <ul>
-        <% for (let i = 0; i < players.length; i++) { %>
-            <li>
-                Player: <a href="/players/<%= players[i].id %>"><%= players[i].name %></a><br>
-                Team: <%= players[i].team %><br>
-                Position: <%= players[i].position %><br>
-                Age: <%= players[i].age %><br>
-                Stats:
-                <ul>
-                    <li>Points: <%= players[i].stats.points %></li>
-                    <li>Rebounds: <%= players[i].stats.rebounds %></li>
-                    <li>Assists: <%= players[i].stats.assists %></li>
-                    <li>Blocks: <%= players[i].stats.blocks %></li>
-                    <li>Steals: <%= players[i].stats.steals %></li>
-                    <li>Turnovers: <%= players[i].stats.turnovers %></li>
-                    <li>Minutes Played: <%= players[i].stats.minutesPlayed %></li>
-                    <li>Field Goal %: <%= players[i].stats.fieldGoalPercentage %></li>
-                    <li>Three Point %: <%= players[i].stats.threePointPercentage %></li>
-                    <li>Free Throw %: <%= players[i].stats.freeThrowPercentage %></li>
-                </ul>
-
-                <form action="/players/<%= players[i].id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE">
-                </form>
-                <a href="/players/<%= players[i].id %>/edit">Edit</a>
-            </li>
-        <% } %>
-    </ul>
-
-    <nav>
-        <a href="/players/new">Add New Player</a>
-    </nav>
-
+    <div class="crud-container">
+        <h1>All Players</h1>
+        <ul class="player-list">
+            <% for (let i = 0; i < players.length; i++) { %>
+                <li class="player-item">
+                    <div>
+                        <span class="player-name">
+                            <a href="/players/<%= players[i].id %>"><%= players[i].name %></a>
+                        </span>
+                        <p class="player-info">
+                            Team: <%= players[i].team %> | Position: <%= players[i].position %> | Age: <%= players[i].age %>
+                        </p>
+                        <div class="player-stats">
+                            <h2>Stats</h2>
+                            <ul>
+                                <li>Points: <%= players[i].stats.points %></li>
+                                <li>Rebounds: <%= players[i].stats.rebounds %></li>
+                                <li>Assists: <%= players[i].stats.assists %></li>
+                                <li>Blocks: <%= players[i].stats.blocks %></li>
+                                <li>Steals: <%= players[i].stats.steals %></li>
+                                <li>Turnovers: <%= players[i].stats.turnovers %></li>
+                                <li>Minutes Played: <%= players[i].stats.minutesPlayed %></li>
+                                <li>Field Goal %: <%= players[i].stats.fieldGoalPercentage %></li>
+                                <li>Three Point %: <%= players[i].stats.threePointPercentage %></li>
+                                <li>Free Throw %: <%= players[i].stats.freeThrowPercentage %></li>
+                            </ul>
+                        </div>
+                        <form action="/players/<%= players[i].id %>?_method=DELETE" method="POST">
+                            <input type="submit" value="DELETE" class="btn-delete">
+                        </form>
+                        <a href="/players/<%= players[i].id %>/edit" class="btn-edit">Edit</a>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+        <nav>
+            <a href="/players/new" class="btn-add">Add New Player</a>
+        </nav>
+    </div>
 
 </body>
 </html>
