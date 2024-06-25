@@ -4,24 +4,74 @@
   <%- include ('./partials/header.ejs') %>
 </head>
 <body>
-    <h1>Add New Player</h1>
-    <form action="/players" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <br>
-      <label for="team">Team:</label>
-      <input type="text" id="team" name="team" required>
-      <br>
-      <label for="position">Position:</label>
-      <input type="text" id="position" name="position" required>
-      <br>
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" required>
-      <br>
-      <label for="stats">Stats:</label>
-      <input type="number" id="stats" name="stats" required>
-      <br>
+  <h1>Add New Player</h1>
+  <form action="/players" method="POST">
+      <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+          <label for="team">Team:</label>
+          <input type="text" id="team" name="team" required>
+      </div>
+      <div>
+          <label for="position">Position:</label>
+          <input type="text" id="position" name="position" required>
+      </div>
+      <div>
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required>
+      </div>
+      <div>
+          <label>Stats:</label>
+          <ul>
+              <li>
+                  <label for="points">Points:</label>
+                  <input type="number" id="points" name="stats[points]" required>
+              </li>
+              <li>
+                  <label for="rebounds">Rebounds:</label>
+                  <input type="number" id="rebounds" name="stats[rebounds]" required>
+              </li>
+              <li>
+                  <label for="assists">Assists:</label>
+                  <input type="number" id="assists" name="stats[assists]" required>
+              </li>
+              <li>
+                  <label for="blocks">Blocks:</label>
+                  <input type="number" id="blocks" name="stats[blocks]" required>
+              </li>
+              <li>
+                  <label for="steals">Steals:</label>
+                  <input type="number" id="steals" name="stats[steals]" required>
+              </li>
+              <li>
+                  <label for="turnovers">Turnovers:</label>
+                  <input type="number" id="turnovers" name="stats[turnovers]" required>
+              </li>
+              <li>
+                  <label for="minutesPlayed">Minutes Played:</label>
+                  <input type="number" id="minutesPlayed" name="stats[minutesPlayed]" required>
+              </li>
+              <li>
+                  <label for="fieldGoalPercentage">Field Goal %:</label>
+                  <input type="number" id="fieldGoalPercentage" name="stats[fieldGoalPercentage]" required>
+              </li>
+              <li>
+                  <label for="threePointPercentage">Three Point %:</label>
+                  <input type="number" id="threePointPercentage" name="stats[threePointPercentage]" required>
+              </li>
+              <li>
+                  <label for="freeThrowPercentage">Free Throw %:</label>
+                  <input type="number" id="freeThrowPercentage" name="stats[freeThrowPercentage]" required>
+              </li>
+          </ul>
+      </div>
       <button type="submit">Add Player</button>
-    </form>
+  </form>
+  
+  <nav>
+      <a href="/players">Back to All Players</a>
+  </nav>
 </body>
 </html>

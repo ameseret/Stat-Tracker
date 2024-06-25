@@ -8,22 +8,36 @@
     <ul>
         <% for (let i = 0; i < players.length; i++) { %>
             <li>
-                Player: <a href="/players/<%= players[i].id %>"><%= players[i].name %>
-                <br></a> Team: <%= players[i].team %>.</br>
-               
+                Player: <a href="/players/<%= players[i].id %>"><%= players[i].name %></a><br>
+                Team: <%= players[i].team %><br>
+                Position: <%= players[i].position %><br>
+                Age: <%= players[i].age %><br>
+                Stats:
+                <ul>
+                    <li>Points: <%= players[i].stats.points %></li>
+                    <li>Rebounds: <%= players[i].stats.rebounds %></li>
+                    <li>Assists: <%= players[i].stats.assists %></li>
+                    <li>Blocks: <%= players[i].stats.blocks %></li>
+                    <li>Steals: <%= players[i].stats.steals %></li>
+                    <li>Turnovers: <%= players[i].stats.turnovers %></li>
+                    <li>Minutes Played: <%= players[i].stats.minutesPlayed %></li>
+                    <li>Field Goal %: <%= players[i].stats.fieldGoalPercentage %></li>
+                    <li>Three Point %: <%= players[i].stats.threePointPercentage %></li>
+                    <li>Free Throw %: <%= players[i].stats.freeThrowPercentage %></li>
+                </ul>
+
                 <form action="/players/<%= players[i].id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE"/>
+                    <input type="submit" value="DELETE">
                 </form>
                 <a href="/players/<%= players[i].id %>/edit">Edit</a>
             </li>
         <% } %>
     </ul>
-    
-   
 
     <nav>
         <a href="/players/new">Add New Player</a>
     </nav>
+
 
 </body>
 </html>
