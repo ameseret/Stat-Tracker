@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
         res.render('index.ejs', { players: players });
     } catch (err) {
         console.error(err);
-        res.send('Error retrieving players');
+        res.status(500).send(err);
     }
 });
 

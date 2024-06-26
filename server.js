@@ -10,7 +10,7 @@ const Player = require("./models/players.js");
 
 const mongoURI = process.env.MONGOURI
 
-
+// const mongoURI = 'mongodb://127.0.0.1:27017/players';
 
 
 
@@ -31,7 +31,6 @@ async function connectToMongo() {
   }
   
   connectToMongo();
-
 
 
 
