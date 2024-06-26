@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express()
+require("dotenv").config();
 const mongoose = require("mongoose");
 const port = process.env.PORT || 3000
 const methodOverride = require("method-override");
@@ -7,7 +8,7 @@ const playersController = require("./controllers/players.js");
 
 const Player = require("./models/players.js");
 
-const mongoURI = 'mongodb://127.0.0.1:27017/players';
+const mongoURI = process.env.MONGOURI
 
 
 
@@ -28,6 +29,9 @@ async function connectToMongo() {
   }
   
   connectToMongo();
+
+
+
 
 
 
